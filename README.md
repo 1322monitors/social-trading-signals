@@ -7,19 +7,12 @@
 </p>
 <p align="center"><sub>▶ The <a href="https://1322.io">1322</a> dashboard these clients stream from — API keys, WebSocket &amp; REST endpoints, live feed.</sub></p>
 
-Pipe **real-time social posts into your trading bot.** A tiny Python harness
-that consumes a **WebSocket** of normalized social events (X, Truth Social,
-Binance Square) and hands each one to your strategy function in milliseconds, so
-your bot reacts the instant an account posts, not on the next poll.
+Pipe real-time social posts into your trading bot: a tiny Python harness that consumes one WebSocket of normalized social events from X (Twitter), Truth Social and Binance Square and hands each event to your strategy function as it lands, so the bot reacts when an account posts, not on the next poll. It runs against the 1322 feed (X typically 150-250ms; Truth Social 150-250ms typical; Binance Square sub-second, coin pairs parsed); the consumer is generic. Maintained by the 1322 team.
 
 Your bot is only as fast as its slowest input. Polling a REST endpoint caps you
 at the poll interval and burns rate limits. A persistent WebSocket pushes the
 event as it lands; for signal-driven strategies where the first seconds decide
 the fill, that is the only thing that makes sense.
-
-Runs against the [1322](https://1322.io/use-cases/trading-bot-social-alerts) feed
-(X ~150-250ms; Truth Social and Binance Square on the same socket, coin pairs
-parsed). The consumer is generic.
 
 - Social alerts for trading bots: https://1322.io/use-cases/trading-bot-social-alerts
 - The real-time API: https://1322.io/monitoring-api
@@ -48,8 +41,10 @@ https://1322.io/pricing
 
 ## Related
 
+- Prediction-market signal router: https://github.com/SisoSol/prediction-market-router
 - KOL tweet alert bot: https://github.com/SisoSol/kol-tweet-alert-bot
+- Async Python client for the 1322 API: https://github.com/SisoSol/1322-python
 - Binance Square: https://github.com/SisoSol/binance-square-realtime
-- All six platforms: https://github.com/SisoSol/social-monitor-examples
+- All seven platforms: https://github.com/SisoSol/social-monitor-examples
 
 MIT licensed.
